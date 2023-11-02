@@ -1,24 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
+import notificationIcon from './images/Notification Bell Badge Logo.png'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='headerContainer'>
+      <img className='imgStyle' src={notificationIcon} alt="" />
+        <h1 className='header'> Welcome to Realtime Flood Monitoring APP </h1>
+
+      </div>
+     
     </div>
   );
 }
