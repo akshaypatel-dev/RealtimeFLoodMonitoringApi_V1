@@ -1,8 +1,8 @@
 .App {
   min-height: 100vh;
 }
-.headerContainer{display: flex;justify-content: center;flex-wrap: wrap;}
-.header{padding-top: 50px;color:rgba(255, 0, 0, 0.786);}
+.headerContainer{display: flex;justify-content: space-around;flex-wrap: wrap;align-items: center;}
+.header{color:rgba(255, 0, 0, 0.786);text-align: center;}
 .imgStyle{height: 170px; width: 170px;border-radius: 50%;}
 
-
+.selectContainer{background-color: red;color: white;padding:10px 5px;text-align: center;height: 50px;overflow: scroll;font-size: large;border: none;}
