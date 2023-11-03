@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from "react";
-import notificationIcon from "./images/Notification Bell Badge Logo.png";
+import notificationIcon from "./images/FloodMate.png";
 import "./App.css";
 
 function App() {
-	interface stationModel {
-		items: items[];
-	}
 	interface items {
 		label: string;
 		notation: string;
@@ -42,14 +39,19 @@ function App() {
 			.then((json) => setStationRecords(json && json.items))
 			.catch((error) => console.error("Error:", error));
 	}, []);
-	const label = stationsRecords.map((items: items) => items.catchmentName);
-
 	return (
 		<div className="App">
 			<div className="headerContainer">
 				<img className="imgStyle" src={notificationIcon} alt="" />
-				<h1 className="header"> Welcome to Realtime Flood Monitoring App </h1>
-				<select className="selectContainer" name="station name" id="">
+				<h1 className="header"> Realtime Flood Monitoring App </h1>
+				<select
+					autoFocus={true}
+					className="selectContainer"
+					name="station name"
+				>
+					<option selected draggable>
+						Select Station Name{" "}
+					</option>
 					{stationsRecords.map((items: items) => (
 						<>
 							<optgroup>

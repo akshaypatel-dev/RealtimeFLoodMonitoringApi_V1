@@ -1,8 +1,44 @@
 .App {
   min-height: 100vh;
+  background-image:url('./images/floodbackground.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-.headerContainer{display: flex;justify-content: space-around;flex-wrap: wrap;align-items: center;}
-.header{color:rgba(255, 0, 0, 0.786);text-align: center;}
-.imgStyle{height: 170px; width: 170px;border-radius: 50%;}
 
-.selectContainer{background-color: red;color: white;padding:10px 5px;text-align: center;height: 50px;overflow: scroll;font-size: large;border: none;}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0px auto;
+  border-bottom: 3px solid #eb4f57;
+  padding-bottom: 10px;
+
+}
+
+.header {
+  text-align: center;
+  color: #eb4f57;
+
+
+}
+
+.imgStyle {
+  height: 140px;
+  width: 140px;
+  padding: 20px;
+  margin-left: 20px;
+}
+
+.selectContainer {
+  color:white;
+  font-weight: bolder;
+  background-color: #eb4f57;
+  margin-right: 20px;
+  padding:15px 4px;
+cursor: pointer;
+  box-shadow: 0 4px 6pxrgba(158, 114, 2, 0.805);
+
+}
+.selectContainer > option {padding: 0px;line-height: 0px;}
