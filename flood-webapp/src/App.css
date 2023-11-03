@@ -1,8 +1,9 @@
 .App {
   min-height: 100vh;
-  background-image:url('./images/floodbackground.jpg');
+  background-image: url('./images/floodbackground.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: white;
 }
 
 
@@ -34,18 +35,50 @@
 }
 
 .selectContainer {
-  color:white;
+  color: white;
   font-weight: bolder;
   background-color: #eb4f57;
   border-radius: 5px;
-  padding:15px 4px;
+  padding: 15px 4px;
   margin-right: 30px;
-cursor: pointer;
+  cursor: pointer;
   box-shadow: 0 4px 6pxrgba(158, 114, 2, 0.805);
 
 }
-@media screen and (max-width:748px){
-.header{font-size: 18px;margin: 0;margin-bottom: 25px;}  
-.selectContainer{padding: 10px;width: 90%;margin: auto;margin-bottom: 20px;}
-.App{background-position:-650px;}
+
+.container {
+  height: 400px;
+  width: 98%;
+  margin: auto;
+  background-color: white;
+  padding: 10px;
+border-radius: 10px;
+}
+.errorContainer{ text-align: center;margin-top: 150px}
+.station-container{text-align: center;color: #eb4f57;}
+
+@media screen and (max-width:748px) {
+  .header {
+    font-size: 18px;
+    margin: 0;
+    margin-bottom: 25px;
+  }
+
+  .selectContainer {
+    padding: 10px;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+
+  .container {
+    width: 90%;
+    margin: 10px auto;
+    background-color: white;
+    padding: 10px;
+  }
+
+  .App {
+    background-position: -650px;
+  }
 }
