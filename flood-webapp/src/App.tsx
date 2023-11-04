@@ -158,7 +158,6 @@ function App() {
 			}
 		});
 		setChartData(linechartData);
-		console.log("setchart data", lineChartData);
 	}
 
 	return (
@@ -301,7 +300,7 @@ function App() {
 							</ul>
 						</div>
 						<div className="imgMain">
-							<img src={FloodMate} alt="image that contain flood details" />
+							<img src={FloodMate} alt="flood details" />
 						</div>
 					</div>
 				</>
