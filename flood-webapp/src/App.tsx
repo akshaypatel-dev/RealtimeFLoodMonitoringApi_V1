@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import notificationIcon from "./images/FloodMate.png";
+import FloodMate from "./images/8570.jpg";
 import {
 	LineChart,
 	Line,
@@ -11,6 +12,8 @@ import {
 	Legend,
 	Tooltip,
 	ResponsiveContainer,
+	AreaChart,
+	Area,
 } from "recharts";
 
 import "./App.css";
@@ -162,7 +165,6 @@ function App() {
 		<div className="App">
 			<div className="headerContainer">
 				<img className="imgStyle" src={notificationIcon} alt="" />
-				<h1 className="header"> Realtime Flood Monitoring App </h1>
 				<select
 					onChange={(event: React.ChangeEvent<HTMLSelectElement>) => {
 						setSelectedStation(event.target.value);
@@ -198,14 +200,19 @@ function App() {
 					</h1>
 					<div className="container">
 						<ResponsiveContainer width="100%" height="100%">
-							<LineChart margin={{ left: 10, right: 10 }} data={lineChartData}>
-								<Line
-									animationDuration={1800}
-									type="natural"
-									dataKey="value"
-									stroke="#eb4f57"
-								/>
-								<CartesianGrid strokeDasharray={"5"} stroke="#eb4f5774" />
+							<AreaChart margin={{ left: 10, right: 10 }} data={lineChartData}>
+								<defs>
+									<linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+										<stop offset="10%" stopColor="#eb4f57" stopOpacity={0.9} />
+										<stop offset="85%" stopColor="#1d84cd" stopOpacity={0.9} />
+									</linearGradient>
+									<linearGradient id="colorPv" x1="0" y1="0" x2="0" y2="1">
+										<stop offset="5%" stopColor="#eb4f57" stopOpacity={0.8} />
+										<stop offset="95%" stopColor="#82ca9d" stopOpacity={0} />
+									</linearGradient>
+								</defs>
+								<CartesianGrid strokeDasharray={"5"} stroke="#4a81d1" />
+
 								<XAxis
 									angle={340}
 									height={100}
@@ -231,23 +238,78 @@ function App() {
 								</YAxis>
 								<Legend verticalAlign="top" height={36} />
 								<Tooltip />
-								<YAxis />
-							</LineChart>
+								<Area
+									type="monotone"
+									dataKey="value"
+									stroke="#4a81d1"
+									fillOpacity={1}
+									fill="url(#colorUv)"
+								/>
+							</AreaChart>
 						</ResponsiveContainer>
 					</div>
 				</>
 			) : (
 				<>
 					{" "}
-					<div>
+					<div className="errorContainer">
 						{" "}
-						<h1 className="errorContainer">
-							{" "}
-							404 Not Found Please select the Station Name :)
-						</h1>
+						<div className="errorMain">
+							<h1 className="errorHeader"> Welcome to Flood Mate </h1>
+							<p className="errorDesc">
+								Our Flood Monitoring App offers a user-friendly interface for
+								accessing real-time flood monitoring data based on stations. It
+								is specifically designed to cater to the needs of the residents
+								and communities in flood-prone areas.
+							</p>
+							<ul className="subError">
+								<li>
+									<b>Real-time Data: </b> The app displays live flood monitoring
+									data, enabling users to stay informed about the current status
+									of their location.
+								</li>
+
+								<li>
+									<b>Historical Data: </b> The app provides access to historical
+									flood data, allowing users to analyze trends and identify
+									potential areas of concern. Interactive Maps: Users can
+									interact with the app's interactive maps to visualize flood
+									monitoring data in their location.
+								</li>
+								<li>
+									<b>Weather Information:</b> The app integrates weather data,
+									allowing users to view the current weather conditions in their
+									area and assess potential flood risks.
+								</li>
+								<li>
+									{" "}
+									<b>Personalized Alerts:</b> Users can set up personalized
+									flood alerts based on their location and preferred alerting
+									method (e.g., email, SMS, or push notifications).
+								</li>
+								<li>
+									<b> Emergency Services: </b> The app offers easy access to
+									emergency services contact information, enabling users to get
+									help quickly during a flood emergency.
+								</li>
+								<li>
+									<b> Educational Content: </b>The app features informative
+									educational content on flood prevention, preparedness, and
+									risk management, helping users make informed decisions about
+									their safety and well-being.
+								</li>
+							</ul>
+						</div>
+						<div className="imgMain">
+							<img src={FloodMate} alt="image that contain flood details" />
+						</div>
 					</div>
 				</>
 			)}
+			<footer className="FooterContainer">
+				{" "}
+				<p className="footer-content">More Features Coming soon...</p>{" "}
+			</footer>
 		</div>
 	);
 }
