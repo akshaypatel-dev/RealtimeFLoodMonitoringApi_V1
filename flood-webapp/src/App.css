@@ -21,6 +21,8 @@
   width: 140px;
   padding: 20px;
   margin-left: 30px;
+  cursor: pointer;
+
 }
 
 .selectContainer {
@@ -89,6 +91,7 @@
   flex-grow: 0;
   flex-shrink: 0;
   flex-basis: 45%;
+
 }
 
 .imgMain img {
@@ -102,15 +105,17 @@
   color: #4a81d1;
   padding-top: 20px;
   padding-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
   position: fixed;
-  left: 0%;
-  right: 0%;
+  width: 100%;
   bottom: 0%;
 }
 
 .footer-content {
-  padding-left: 70px;
+  margin-left: 30px;
 }
+.version-content{margin-right: 30px;}
 
 @media screen and (max-width: 648px) {
   .imgStyle {

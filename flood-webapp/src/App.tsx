@@ -163,7 +163,14 @@ function App() {
 	return (
 		<div className="App">
 			<div className="headerContainer">
-				<img className="imgStyle" src={notificationIcon} alt="" />
+				<img
+					onClick={() => {
+						setSelectedStation("");
+					}}
+					className="imgStyle"
+					src={notificationIcon}
+					alt=""
+				/>
 				<select
 					onChange={(event: React.ChangeEvent<HTMLSelectElement>) => {
 						setSelectedStation(event.target.value);
@@ -191,7 +198,7 @@ function App() {
 				</select>
 			</div>
 
-			{selectedStation ? (
+			{selectedStation && selectedStation !== "Select Station Name" ? (
 				<>
 					<h1 className="station-container">
 						{" "}
@@ -308,6 +315,7 @@ function App() {
 			<footer className="FooterContainer">
 				{" "}
 				<p className="footer-content">More Features Coming soon...</p>{" "}
+				<p className="version-content">FloodMate-V1.00</p>
 			</footer>
 		</div>
 	);
